@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Chasse au tresor V2</string>
+    <string name="mapbox_access_token">pk.eyJ1IjoibGxlb3RyYWFzIiwiYSI6ImNsZnFqczhqbjAwMjAzd3IwYmR6ZTliNmYifQ.92y5Tdf9U3DpB6DYDxvuEg</string>
+    <string name="permission_denied">You have denied the location permission</string>
+    <string name="remove_marker">Remove marker</string>
+</resources>
