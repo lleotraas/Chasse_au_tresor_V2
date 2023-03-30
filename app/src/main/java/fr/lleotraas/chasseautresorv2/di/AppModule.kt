@@ -9,7 +9,7 @@ import fr.lleotraas.chasseautresorv2.domain.repository.DirectionRepository
 import fr.lleotraas.chasseautresorv2.domain.retrofit.DirectionApi
 import fr.lleotraas.chasseautresorv2.domain.use_cases.DirectionUseCases
 import fr.lleotraas.chasseautresorv2.domain.use_cases.GetDirection
-import fr.lleotraas.chasseautresorv2.utils.Utils
+import fr.lleotraas.chasseautresorv2.utils.Constant
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
@@ -22,7 +22,7 @@ object AppModule {
     @Singleton
     fun provideDirectionApi(): DirectionApi {
         return Retrofit.Builder()
-            .baseUrl(Utils.DIRECTION_BASE_URL)
+            .baseUrl(Constant.DIRECTION_BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(DirectionApi::class.java)

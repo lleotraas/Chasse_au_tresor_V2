@@ -44,9 +44,9 @@ class MapViewModel @Inject constructor(
             if (response.isSuccessful && response.body() != null) {
                 Log.e(javaClass.simpleName, "getDirection: response is successful")
                 val direction = response.body()
-                _state.value = state.value.copy(
-                    route = direction?.routes ?: emptyList()
-                )
+//                _state.value = state.value.copy(
+//                    route = direction?.routes ?: emptyList()
+//                )
             }
         }
     }
@@ -65,6 +65,19 @@ class MapViewModel @Inject constructor(
                 }
                 _state.value = state.value.copy(
                     pointList = state.value.pointList
+                )
+            }
+            is MapEvent.UpdateRoutes -> {
+//                if(state.value.route.isNotEmpty()) {
+//                    state.value.route.add(event.route)
+//                }
+                _state.value = state.value.copy(
+                    routes = event.routes
+                )
+            }
+            is MapEvent.UpdateLastKnownPosition -> {
+                _state.value = state.value.copy(
+                    lastKnownLocation = event.location
                 )
             }
         }
